@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/icon/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>CRONÔMETRO</title>
+    <script src="assets/js/countdown.class.js" defer></script>
+    <script src="assets/js/stopwatch.class.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/style/app.css" />
+  </head>
+  <body>
+    <div id="time-container">
+      <div id="time-display">00:00:00</div>
+      <div id="time-buttons">
+        <button
+          id="startButton"
+          class="timerBtn"
+          type="button"
+          name="startwatch"
+        >
+          Iniciar
+        </button>
+        <button
+          id="pauseButton"
+          class="timerBtn"
+          type="button"
+          name="pausewatch"
+        >
+          Pausar
+        </button>
+        <button
+          id="resetButton"
+          class="timerBtn"
+          type="button"
+          name="resetwatch"
+        >
+          Reiniciar
+        </button>
+      </div>
+    </div>
+
+    <div id="contdown-container">
+      <div id="msgToast"></div>
+      <div id="contdown-display">
+        <form>
+          <div class="timerInput">
+            <label for="hourCount">Horas</label>
+            <input
+              type="number"
+              id="hourCount"
+              min="0"
+              max="24"
+              step="1"
+              value="0"
+            />
+            <button
+              type="button"
+              class="countdownBtnPlus timerBtn"
+              onclick="Countdown.stepUp(this.parentNode.querySelector('#hourCount'))"
+            >
+              +
+            </button>
+            <button
+              type="button"
+              class="countdownBtnMinus timerBtn"
+              onclick="Countdown.stepDown(this.parentNode.querySelector('#hourCount'))"
+            >
+              -
+            </button>
+          </div>
+          <div class="timerInput">
+            <label for="minuteCount">Minutos</label>
+            <input
+              type="number"
+              id="minuteCount"
+              min="0"
+              max="59"
+              step="1"
+              value="0"
+            />
+            <button
+              type="button"
+              class="countdownBtnPlus timerBtn"
+              onclick="Countdown.stepUp(this.parentNode.querySelector('#minuteCount'))"
+            >
+              +
+            </button>
+            <button
+              type="button"
+              class="countdownBtnMinus timerBtn"
+              onclick="Countdown.stepDown(this.parentNode.querySelector('#minuteCount'))"
+            >
+              -
+            </button>
+          </div>
+          <div class="timerInput">
+            <label for="secondCount">Segundos</label>
+            <input
+              type="number"
+              id="secondCount"
+              min="0"
+              max="59"
+              step="1"
+              value="0"
+            />
+            <button
+              type="button"
+              class="countdownBtnPlus timerBtn"
+              onclick="Countdown.stepUp(this.parentNode.querySelector('#secondCount'))"
+            >
+              +
+            </button>
+            <button
+              type="button"
+              class="countdownBtnMinus timerBtn"
+              onclick="Countdown.stepDown(this.parentNode.querySelector('#secondCount'))"
+            >
+              -
+            </button>
+          </div>
+        </form>
+      </div>
+      <div id="count-buttons">
+        <button id="setButton" class="timerBtn" type="button" name="setwatch">
+          Definir
+        </button>
+        <button id="zeroButton" class="timerBtn" type="button" name="zerowatch">
+          Zerar
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
